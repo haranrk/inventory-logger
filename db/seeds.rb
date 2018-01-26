@@ -1,0 +1,7 @@
+Person.create!(name: "Haran",number: "9585812000")
+Person.create!(name: "Ayush",number: "9585812000")
+Person.create!(name: "Stanley",number: "9585812000")
+Person.create!(name: "Anurag",number: "9585812000")
+Equipment.create!(name:"Gimbal")
+Equipment.create!(name:"Tripod_a")
+Equipment.create!(name:"Osmo")

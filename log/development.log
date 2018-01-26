@@ -1,0 +1,627 @@
+Started GET "/" for 127.0.0.1 at 2018-01-26 08:21:29 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/haranrk/.rbenv/versions/2.4.3/lib/ruby/gems/2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/haranrk/.rbenv/versions/2.4.3/lib/ruby/gems/2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (1.8ms)
+Completed 200 OK in 371ms (Views: 38.9ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (346.9ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (280.8ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK(5405270756021417505, 0)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateEquipment (20180126025424)
+  [1m[35m (308.8ms)[0m  [1m[35mCREATE TABLE `equipment` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (9.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180126025424')[0m
+  [1m[35m (53.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePeople (20180126025526)
+  [1m[35m (267.3ms)[0m  [1m[35mCREATE TABLE `people` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `number` varchar(255), `roll_no` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180126025526')[0m
+  [1m[35m (87.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateLogs (20180126030019)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK(5405270756021417505)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK(5405270756021417505, 0)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateLogs (20180126030019)
+  [1m[35m (322.6ms)[0m  [1m[35mCREATE TABLE `logs` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `person_id` bigint, `equipment_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_logs_on_person_id`  (`person_id`),  INDEX `index_logs_on_equipment_id`  (`equipment_id`)) ENGINE=InnoDB[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180126030019')[0m
+  [1m[35m (41.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2018-01-26 03:01:55', '2018-01-26 03:01:55')[0m
+  [1m[35m (38.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT RELEASE_LOCK(5405270756021417505)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/" for 127.0.0.1 at 2018-01-26 08:33:37 +0530
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/haranrk/.rbenv/versions/2.4.3/lib/ruby/gems/2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/haranrk/.rbenv/versions/2.4.3/lib/ruby/gems/2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (1.6ms)
+Completed 200 OK in 9ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logs/new" for 127.0.0.1 at 2018-01-26 08:33:52 +0530
+Processing by LogsController#new as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/haranrk/Documents/inventory_logger/app/models/log.rb:2: syntax error, unexpected ':', expecting keyword_end
+	belongs_to: person, equipment
+	           ^
+/home/haranrk/Documents/inventory_logger/app/models/log.rb:2: syntax error, unexpected '\n', expecting '='):
+  
+app/models/log.rb:2: syntax error, unexpected ':', expecting keyword_end
+app/models/log.rb:2: syntax error, unexpected '\n', expecting '='
+app/controllers/logs_controller.rb:17:in `new'
+Started GET "/logs/new" for 127.0.0.1 at 2018-01-26 08:39:09 +0530
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by LogsController#new as HTML
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `arity' for :equipment:Symbol):
+  
+app/models/log.rb:2:in `<class:Log>'
+app/models/log.rb:1:in `<top (required)>'
+app/controllers/logs_controller.rb:17:in `new'
+Started GET "/equipment/new" for 127.0.0.1 at 2018-01-26 08:40:00 +0530
+Processing by EquipmentController#new as HTML
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  Rendering equipment/new.html.erb within layouts/application
+  Rendered equipment/_form.html.erb (75.1ms)
+  Rendered equipment/new.html.erb within layouts/application (75.8ms)
+Completed 200 OK in 1831ms (Views: 1784.5ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/equipment" for 127.0.0.1 at 2018-01-26 08:40:13 +0530
+Processing by EquipmentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8aMalPekZcQ7VbB3uHiKUhse3kiQ8DDwrOjUF/cdytjz1zRU88dGhzXPF1BiUypZ/mQBckI9ujCfMffmCi/gPw==", "equipment"=>{"name"=>"gimbal"}, "commit"=>"Create Equipment"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `equipment` (`name`, `created_at`, `updated_at`) VALUES ('gimbal', '2018-01-26 03:10:13', '2018-01-26 03:10:13')[0m
+  [1m[35m (101.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/equipment/1
+Completed 302 Found in 106ms (ActiveRecord: 101.4ms)
+
+
+Started GET "/equipment/1" for 127.0.0.1 at 2018-01-26 08:40:13 +0530
+Processing by EquipmentController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEquipment Load (0.3ms)[0m  [1m[34mSELECT  `equipment`.* FROM `equipment` WHERE `equipment`.`id` = 1 LIMIT 1[0m
+  Rendering equipment/show.html.erb within layouts/application
+  Rendered equipment/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 32ms (Views: 11.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/equipment" for 127.0.0.1 at 2018-01-26 08:40:15 +0530
+Processing by EquipmentController#index as HTML
+  Rendering equipment/index.html.erb within layouts/application
+  [1m[36mEquipment Load (0.3ms)[0m  [1m[34mSELECT `equipment`.* FROM `equipment`[0m
+  Rendered equipment/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 19ms (Views: 17.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/persons/new" for 127.0.0.1 at 2018-01-26 08:40:30 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/persons/new"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/person/new" for 127.0.0.1 at 2018-01-26 08:40:35 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/person/new"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/people/new" for 127.0.0.1 at 2018-01-26 08:40:50 +0530
+Processing by PeopleController#new as HTML
+  Rendering people/new.html.erb within layouts/application
+  Rendered people/_form.html.erb (2.2ms)
+  Rendered people/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 22ms (Views: 15.2ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/people" for 127.0.0.1 at 2018-01-26 08:40:59 +0530
+Processing by PeopleController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9eX16tk37MIL9yLV2IgSpsChO917qQ2dxxm7YOL/fUf3kdsq3VTPgQVthfICo7KtJdvk56lkh130wJiRH81XoA==", "person"=>{"name"=>"Haran", "number"=>"9585812000", "roll_no"=>"ED15B020"}, "commit"=>"Create Person"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `people` (`name`, `number`, `roll_no`, `created_at`, `updated_at`) VALUES ('Haran', '9585812000', 'ED15B020', '2018-01-26 03:10:59', '2018-01-26 03:10:59')[0m
+  [1m[35m (83.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/people/1
+Completed 302 Found in 89ms (ActiveRecord: 84.2ms)
+
+
+Started GET "/people/1" for 127.0.0.1 at 2018-01-26 08:41:00 +0530
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  `people`.* FROM `people` WHERE `people`.`id` = 1 LIMIT 1[0m
+  Rendering people/show.html.erb within layouts/application
+  Rendered people/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 19ms (Views: 12.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2018-01-26 08:41:03 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT `people`.* FROM `people`[0m
+  Rendered people/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 17ms (Views: 15.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/logs/new" for 127.0.0.1 at 2018-01-26 08:41:09 +0530
+Processing by LogsController#new as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `arity' for :equipment:Symbol):
+  
+app/models/log.rb:2:in `<class:Log>'
+app/models/log.rb:1:in `<top (required)>'
+app/controllers/logs_controller.rb:17:in `new'
+Started GET "/logs/new" for 127.0.0.1 at 2018-01-26 08:41:22 +0530
+Processing by LogsController#new as HTML
+  Rendering logs/new.html.erb within layouts/application
+  Rendered logs/_form.html.erb (1.7ms)
+  Rendered logs/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 25ms (Views: 13.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/logs/new" for 127.0.0.1 at 2018-01-26 08:41:45 +0530
+Processing by LogsController#new as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `arity' for :equipment:Symbol):
+  
+app/models/log.rb:2:in `<class:Log>'
+app/models/log.rb:1:in `<top (required)>'
+app/controllers/logs_controller.rb:17:in `new'
+Started GET "/logs/new" for 127.0.0.1 at 2018-01-26 08:42:26 +0530
+Processing by LogsController#new as HTML
+  Rendering logs/new.html.erb within layouts/application
+  Rendered logs/_form.html.erb (18.4ms)
+  Rendered logs/new.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 43ms (Views: 30.8ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/logs" for 127.0.0.1 at 2018-01-26 08:42:34 +0530
+Processing by LogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5f8LFbRV8u1fODrT5dUYCjT3ICJUoM31TxyAr3zxmaDniyXVsDbRrlGinfQ//rgB0Y3/GIZtRzV8xaNegcOzRw==", "log"=>{"person"=>"1", "equipment"=>"1"}, "commit"=>"Create Log"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (Person(#70226319727620) expected, got "1" which is an instance of String(#47127317610240)):
+  
+app/controllers/logs_controller.rb:27:in `create'
+Started GET "/persons" for 127.0.0.1 at 2018-01-26 08:43:11 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/persons"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/peopel" for 127.0.0.1 at 2018-01-26 08:43:17 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/peopel"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/people" for 127.0.0.1 at 2018-01-26 08:43:21 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT `people`.* FROM `people`[0m
+  Rendered people/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 19ms (Views: 17.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/people/1" for 127.0.0.1 at 2018-01-26 08:43:55 +0530
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  `people`.* FROM `people` WHERE `people`.`id` = 1 LIMIT 1[0m
+  Rendering people/show.html.erb within layouts/application
+  Rendered people/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 17ms (Views: 14.7ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  `people`.* FROM `people` LIMIT 11[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  `people`.* FROM `people` WHERE `people`.`id` = 1 LIMIT 1[0m
+  [1m[36mEquipment Load (0.2ms)[0m  [1m[34mSELECT  `equipment`.* FROM `equipment` WHERE `equipment`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `logs` (`person_id`, `equipment_id`, `created_at`, `updated_at`) VALUES (1, 1, '2018-01-26 03:15:04', '2018-01-26 03:15:04')[0m
+  [1m[35m (47.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/people" for 127.0.0.1 at 2018-01-26 08:45:24 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT `people`.* FROM `people`[0m
+  Rendered people/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 19ms (Views: 17.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/logs/new" for 127.0.0.1 at 2018-01-26 08:45:30 +0530
+Processing by LogsController#new as HTML
+  Rendering logs/new.html.erb within layouts/application
+  Rendered logs/_form.html.erb (1.7ms)
+  Rendered logs/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/logs" for 127.0.0.1 at 2018-01-26 08:45:42 +0530
+Processing by LogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+ijsyc1wZiWuajg8HckotKLgSf4HqN0c+vwvfa3O2pz4XMIJyRNFZqDwnxvH4oi/R5qWxNVlV9zJJQyMUPzwew==", "log"=>{"person"=>"1", "equipment"=>"1"}, "commit"=>"Create Log"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (Person(#70226319727620) expected, got "1" which is an instance of String(#47127317610240)):
+  
+app/controllers/logs_controller.rb:27:in `create'
+Started POST "/logs" for 127.0.0.1 at 2018-01-26 08:46:38 +0530
+Processing by LogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+ijsyc1wZiWuajg8HckotKLgSf4HqN0c+vwvfa3O2pz4XMIJyRNFZqDwnxvH4oi/R5qWxNVlV9zJJQyMUPzwew==", "log"=>{"person"=>"1", "equipment"=>"1"}, "commit"=>"Create Log"}
+Completed 500 Internal Server Error in 9610ms (ActiveRecord: 1.3ms)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (Person(#70226374501480) expected, got "1" which is an instance of String(#47127317610240)):
+  
+app/controllers/logs_controller.rb:28:in `create'
+  [1m[36mEquipment Load (0.7ms)[0m  [1m[34mSELECT  `equipment`.* FROM `equipment` LIMIT 11[0m
+Started POST "/logs" for 127.0.0.1 at 2018-01-26 08:49:49 +0530
+Processing by LogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+ijsyc1wZiWuajg8HckotKLgSf4HqN0c+vwvfa3O2pz4XMIJyRNFZqDwnxvH4oi/R5qWxNVlV9zJJQyMUPzwew==", "log"=>{"person"=>"Haran", "equipment"=>"gimbal"}, "commit"=>"Create Log"}
+  [1m[36mPerson Load (0.5ms)[0m  [1m[34mSELECT  `people`.* FROM `people` WHERE `people`.`person` = 'Haran' LIMIT 1[0m
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.9ms)
+
+
+  
+ActiveRecord::StatementInvalid (Mysql2::Error: Unknown column 'people.person' in 'where clause': SELECT  `people`.* FROM `people` WHERE `people`.`person` = 'Haran' LIMIT 1):
+  
+app/controllers/logs_controller.rb:28:in `create'
+Started POST "/logs" for 127.0.0.1 at 2018-01-26 08:50:10 +0530
+Processing by LogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+ijsyc1wZiWuajg8HckotKLgSf4HqN0c+vwvfa3O2pz4XMIJyRNFZqDwnxvH4oi/R5qWxNVlV9zJJQyMUPzwew==", "log"=>{"person"=>"Haran", "equipment"=>"gimbal"}, "commit"=>"Create Log"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  `people`.* FROM `people` WHERE `people`.`name` = 'Haran' LIMIT 1[0m
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (Person(#70226315943440) expected, got 1 which is an instance of Integer(#47127317594840)):
+  
+app/controllers/logs_controller.rb:28:in `create'
+Started POST "/logs" for 127.0.0.1 at 2018-01-26 08:50:46 +0530
+Processing by LogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+ijsyc1wZiWuajg8HckotKLgSf4HqN0c+vwvfa3O2pz4XMIJyRNFZqDwnxvH4oi/R5qWxNVlV9zJJQyMUPzwew==", "log"=>{"person"=>"Haran", "equipment"=>"gimbal"}, "commit"=>"Create Log"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  `people`.* FROM `people` WHERE `people`.`name` = 'Haran' LIMIT 1[0m
+  [1m[36mEquipment Load (0.2ms)[0m  [1m[34mSELECT  `equipment`.* FROM `equipment` WHERE `equipment`.`name` = 'gimbal' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `logs` (`person_id`, `equipment_id`, `created_at`, `updated_at`) VALUES (1, 1, '2018-01-26 03:20:46', '2018-01-26 03:20:46')[0m
+  [1m[35m (80.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/logs/2
+Completed 302 Found in 101ms (ActiveRecord: 82.0ms)
+
+
+Started GET "/logs/2" for 127.0.0.1 at 2018-01-26 08:50:46 +0530
+Processing by LogsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mLog Load (38.7ms)[0m  [1m[34mSELECT  `logs`.* FROM `logs` WHERE `logs`.`id` = 2 LIMIT 1[0m
+  Rendering logs/show.html.erb within layouts/application
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  `people`.* FROM `people` WHERE `people`.`id` = 1 LIMIT 1[0m
+  [1m[36mEquipment Load (0.2ms)[0m  [1m[34mSELECT  `equipment`.* FROM `equipment` WHERE `equipment`.`id` = 1 LIMIT 1[0m
+  Rendered logs/show.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 65ms (Views: 24.3ms | ActiveRecord: 39.2ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (828.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS `inventory_logger_development`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (45.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS `inventory_logger_test`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE DATABASE `inventory_logger_development` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE DATABASE `inventory_logger_test` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS `equipment` CASCADE[0m
+  [1m[35m (245.2ms)[0m  [1m[35mCREATE TABLE `equipment` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS `logs` CASCADE[0m
+  [1m[35m (301.2ms)[0m  [1m[35mCREATE TABLE `logs` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `person_id` bigint, `equipment_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_logs_on_equipment_id`  (`equipment_id`),  INDEX `index_logs_on_person_id`  (`person_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS `people` CASCADE[0m
+  [1m[35m (256.7ms)[0m  [1m[35mCREATE TABLE `people` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `number` varchar(255), `roll_no` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (289.6ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (43.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20180126030019)[0m
+  [1m[35m (44.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20180126025424),
+(20180126025526);
+
+[0m
+  [1m[35m (325.7ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2018-01-26 03:29:28', '2018-01-26 03:29:28')[0m
+  [1m[35m (38.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS `equipment` CASCADE[0m
+  [1m[35m (241.7ms)[0m  [1m[35mCREATE TABLE `equipment` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS `logs` CASCADE[0m
+  [1m[35m (345.6ms)[0m  [1m[35mCREATE TABLE `logs` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `person_id` bigint, `equipment_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_logs_on_equipment_id`  (`equipment_id`),  INDEX `index_logs_on_person_id`  (`person_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS `people` CASCADE[0m
+  [1m[35m (301.2ms)[0m  [1m[35mCREATE TABLE `people` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `number` varchar(255), `roll_no` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (267.6ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (34.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20180126030019)[0m
+  [1m[35m (33.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20180126025424),
+(20180126025526);
+
+[0m
+  [1m[35m (346.2ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2018-01-26 03:29:30', '2018-01-26 03:29:30')[0m
+  [1m[35m (41.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (880.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS `inventory_logger_development`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (818.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS `inventory_logger_test`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE DATABASE `inventory_logger_development` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE DATABASE `inventory_logger_test` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS `equipment` CASCADE[0m
+  [1m[35m (276.2ms)[0m  [1m[35mCREATE TABLE `equipment` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS `logs` CASCADE[0m
+  [1m[35m (368.8ms)[0m  [1m[35mCREATE TABLE `logs` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `person_id` bigint, `equipment_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_logs_on_equipment_id`  (`equipment_id`),  INDEX `index_logs_on_person_id`  (`person_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS `people` CASCADE[0m
+  [1m[35m (280.6ms)[0m  [1m[35mCREATE TABLE `people` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `number` varchar(255), `roll_no` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (299.8ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (32.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20180126030019)[0m
+  [1m[35m (33.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20180126025424),
+(20180126025526);
+
+[0m
+  [1m[35m (325.8ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2018-01-26 03:30:05', '2018-01-26 03:30:05')[0m
+  [1m[35m (39.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS `equipment` CASCADE[0m
+  [1m[35m (254.8ms)[0m  [1m[35mCREATE TABLE `equipment` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS `logs` CASCADE[0m
+  [1m[35m (374.9ms)[0m  [1m[35mCREATE TABLE `logs` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `person_id` bigint, `equipment_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_logs_on_equipment_id`  (`equipment_id`),  INDEX `index_logs_on_person_id`  (`person_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `people` CASCADE[0m
+  [1m[35m (245.0ms)[0m  [1m[35mCREATE TABLE `people` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `number` varchar(255), `roll_no` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (255.9ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (42.9ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20180126030019)[0m
+  [1m[35m (44.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20180126025424),
+(20180126025526);
+
+[0m
+  [1m[35m (398.9ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2018-01-26 03:30:07', '2018-01-26 03:30:07')[0m
+  [1m[35m (42.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `people` (`name`, `number`, `created_at`, `updated_at`) VALUES ('Haran', '9585812000', '2018-01-26 03:30:07', '2018-01-26 03:30:07')[0m
+  [1m[35m (40.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `people` (`name`, `number`, `created_at`, `updated_at`) VALUES ('Ayush', '9585812000', '2018-01-26 03:30:07', '2018-01-26 03:30:07')[0m
+  [1m[35m (86.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `equipment` (`name`, `created_at`, `updated_at`) VALUES ('Gimbal', '2018-01-26 03:30:07', '2018-01-26 03:30:07')[0m
+  [1m[35m (39.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `equipment` (`name`, `created_at`, `updated_at`) VALUES ('Tripod_a', '2018-01-26 03:30:07', '2018-01-26 03:30:07')[0m
+  [1m[35m (87.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `equipment` (`name`, `created_at`, `updated_at`) VALUES ('Osmo', '2018-01-26 03:30:07', '2018-01-26 03:30:07')[0m
+  [1m[35m (87.8ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/logs/2" for 127.0.0.1 at 2018-01-26 09:10:56 +0530
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by LogsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  `logs`.* FROM `logs` WHERE `logs`.`id` = 2 LIMIT 1[0m
+Completed 404 Not Found in 12ms (ActiveRecord: 1.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Log with 'id'=2):
+  
+app/controllers/logs_controller.rb:69:in `set_log'
+Started GET "/logs" for 127.0.0.1 at 2018-01-26 09:11:01 +0530
+Processing by LogsController#index as HTML
+  Rendering logs/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mLog Load (0.3ms)[0m  [1m[34mSELECT `logs`.* FROM `logs`[0m
+  Rendered logs/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 144ms (Views: 142.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/logs/new" for 127.0.0.1 at 2018-01-26 09:11:03 +0530
+Processing by LogsController#new as HTML
+  Rendering logs/new.html.erb within layouts/application
+  Rendered logs/_form.html.erb (36.1ms)
+  Rendered logs/new.html.erb within layouts/application (37.6ms)
+Completed 200 OK in 78ms (Views: 63.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/logs" for 127.0.0.1 at 2018-01-26 09:11:08 +0530
+Processing by LogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mKWHkhAtx3nOHdneGWGX/r29qzQ/yM5N+okyQUILLtgxv2/YKF4+PbynhBEtCgZb1ck8RsiiPnV10mXijpEVkA==", "log"=>{"person"=>"Haran", "equipment"=>"Gimbal"}, "commit"=>"Create Log"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  `people`.* FROM `people` WHERE `people`.`name` = 'Haran' LIMIT 1[0m
+  [1m[36mEquipment Load (0.1ms)[0m  [1m[34mSELECT  `equipment`.* FROM `equipment` WHERE `equipment`.`name` = 'Gimbal' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `logs` (`person_id`, `equipment_id`, `created_at`, `updated_at`) VALUES (1, 1, '2018-01-26 03:41:08', '2018-01-26 03:41:08')[0m
+  [1m[35m (63.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/logs/1
+Completed 302 Found in 78ms (ActiveRecord: 65.4ms)
+
+
+Started GET "/logs/1" for 127.0.0.1 at 2018-01-26 09:11:08 +0530
+Processing by LogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  `logs`.* FROM `logs` WHERE `logs`.`id` = 1 LIMIT 1[0m
+  Rendering logs/show.html.erb within layouts/application
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT  `people`.* FROM `people` WHERE `people`.`id` = 1 LIMIT 1[0m
+  [1m[36mEquipment Load (0.3ms)[0m  [1m[34mSELECT  `equipment`.* FROM `equipment` WHERE `equipment`.`id` = 1 LIMIT 1[0m
+  Rendered logs/show.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 19ms (Views: 16.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/logs" for 127.0.0.1 at 2018-01-26 09:11:10 +0530
+Processing by LogsController#index as HTML
+  Rendering logs/index.html.erb within layouts/application
+  [1m[36mLog Load (0.3ms)[0m  [1m[34mSELECT `logs`.* FROM `logs`[0m
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  `people`.* FROM `people` WHERE `people`.`id` = 1 LIMIT 1[0m
+  [1m[36mEquipment Load (0.4ms)[0m  [1m[34mSELECT  `equipment`.* FROM `equipment` WHERE `equipment`.`id` = 1 LIMIT 1[0m
+  Rendered logs/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 24ms (Views: 21.8ms | ActiveRecord: 1.0ms)
+
+
