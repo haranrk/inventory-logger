@@ -4,6 +4,23 @@
   <strong>Name:</strong>
   <%= @equipment.name %>
 </p>
-
-<%= link_to 'Edit', edit_equipment_path(@equipment) %> |
+<table class="table">
+	<thead>
+			<tr>
+				<th>Person</th>
+				<th>Time Logged</th>
+			</tr>
+	</thead>
+	<tbody>
+		
+		<% @equipment.logs.each do |log| %>
+		<tr>
+			<td><%= link_to log.person.name, person_path(log.person) %></td>
+			<td><%= log.created_at %></td>
+		</tr>
+		<%end%>
+	</tbody>
+	
+</table>
+<%= link_to 'Edit', edit_equipment_path(@equipment) %> 
 <%= link_to 'Back', equipment_index_path %>

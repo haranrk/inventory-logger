@@ -2,11 +2,12 @@
 
 <h1>Logs</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Person</th>
       <th>Equipment</th>
+      <th>Log Time</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,9 +15,9 @@
   <tbody>
     <% @logs.each do |log| %>
       <tr>
-        <td><%= log.person %></td>
-        <td><%= log.equipment %></td>
-        <td><%= link_to 'Show', log %></td>
+        <td><%= link_to log.person.name, person_path(log.person) %></td>
+        <td><%= log.equipment.name %></td>
+        <td><%= log.created_at %></td>
         <td><%= link_to 'Edit', edit_log_path(log) %></td>
         <td><%= link_to 'Destroy', log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

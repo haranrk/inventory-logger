@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Equipment</h1>
+<h1>Equipment List</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Name</th>
@@ -14,9 +14,9 @@
     <% @equipment.each do |equipment| %>
       <tr>
         <td><%= equipment.name %></td>
-        <td><%= link_to 'Show', equipment %></td>
+        <td><%= link_to 'View history', equipment %></td>
         <td><%= link_to 'Edit', edit_equipment_path(equipment) %></td>
-        <td><%= link_to 'Destroy', equipment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', equipment, method: :delete, data: { confirm: 'This would delete all associated logs, Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

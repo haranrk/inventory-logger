@@ -54,6 +54,9 @@ class EquipmentController < ApplicationController
   # DELETE /equipment/1
   # DELETE /equipment/1.json
   def destroy
+    @equipment.logs.each do |log|
+      log.destroy
+    end
     @equipment.destroy
     respond_to do |format|
       format.html { redirect_to equipment_index_url, notice: 'Equipment was successfully destroyed.' }

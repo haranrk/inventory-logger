@@ -10,5 +10,10 @@
 
   <body>
     <%= yield %>
+    <br>
+  <%= link_to 'Add new Log |', new_log_path %>
+	<%= link_to 'View Logs |', logs_path %>
+	<%= link_to 'View Equipment List |', equipment_index_path %>
+	<%= link_to 'View Persons List |', people_path %>
   </body>
 </html>

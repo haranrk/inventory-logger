@@ -2,12 +2,12 @@
 
 <p>
   <strong>Person:</strong>
-  <%= @log.person %>
+  <%= @log.person.name %>
 </p>
 
 <p>
   <strong>Equipment:</strong>
-  <%= @log.equipment %>
+  <%= @log.equipment.name %>
 </p>
 
 <%= link_to 'Edit', edit_log_path(@log) %> |
